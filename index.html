@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+			var count = 10;
+			var random = Math.floor(Math.random()*100);
+			var values="";
+		function getNumber()
+		{
+				var val = document.getElementById("n").value;
+				if(count<=0)
+				{
+						document.getElementById("ans").innerHTML="You Lose - Better Luck next time"	;
+				}
+				else if(val==random)
+				{
+						document.getElementById("ans").innerHTML="Hurrah!! You Win"	;
+				}
+				else
+				{
+					var str;
+					values = values +val +" ";
+					count--;
+					if(random<val)
+					{
+						str="Number	 is minimum than Guessed	";
+					}
+					else
+					{
+						str="Number	 is maximum than Guessed	";
+					}
+					document.getElementById("ans").innerHTML="You have"+count + " try left" +"  "+str	;
+					document.getElementById("insertedValues").innerHTML="Guessed values	"+values;
+				}
+
+						
+			
+			
+		}
+	</script>
+	<title>Guess a Number between 1 to 100</title>
+</head>
+<body align="center" bgcolor="#3e4444" color="white">
+	<h1 style="color:white"> Guess a number between 1 to 100 </h1>
+	<input type="number" id="n" min="1" max="100">
+</br>
+</br>
+	<button type="button" onclick="getNumber()">Guess</button>
+	<p style="color:white" id="insertedValues"></p>
+	<p style="color:white" id="ans"></p>
+</body>
+</html>
